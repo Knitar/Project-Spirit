@@ -209,11 +209,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      swoosh 1_0: -3247763297174777780
-      swoosh 1_1: -7321482278481757517
-      swoosh 1_2: 1569996061297626205
-      swoosh 1_3: -9137967329181422779
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
