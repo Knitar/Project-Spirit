@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Script : MonoBehaviour
+public class NIGGA : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -11,7 +11,6 @@ public class Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      string test = "test";
-
+        
     }
 }
