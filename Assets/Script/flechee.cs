@@ -12,11 +12,6 @@ public class flechee : MonoBehaviour
         Destroy(gameObject, lifetime);
     }
 
-    void Update()
-    {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
-    }
-
     /********************************** Contact avec quelque chose *******************************/
     void OnTriggerEnter2D(Collider2D collision)
     {

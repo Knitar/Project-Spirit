@@ -2,9 +2,18 @@ using UnityEngine;
 
 public class spawner : MonoBehaviour
 {
-     public GameObject arrowPrefab; // prefab du serpent
+    public GameObject arrowPrefab; // Prefab de la flèche
     public Vector2 arrowDirection = Vector2.right; 
-    public float arrowSpeed = 5f; 
+    public float arrowSpeed = 25f; 
+
+    private SpriteRenderer playerSpriteRenderer;
+
+    void Start()
+    {
+
+        playerSpriteRenderer = GetComponentInParent<SpriteRenderer>();
+    }
+
     void Update()
     {
     
@@ -14,16 +23,25 @@ public class spawner : MonoBehaviour
         }
     }
 
-/********************************** Mise en place de la flèche *******************************/
-
+    /********************************** Mise en place de la flèche *******************************/
     void SpawnArrow()
     {
+    
         GameObject arrow = Instantiate(arrowPrefab, transform.position, Quaternion.identity);
 
+        float direction = playerSpriteRenderer.flipX ? -1f : 1f;
+
+
         Rigidbody2D rb = arrow.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        rb.linearVelocity = new Vector2(arrowSpeed * direction, 0);
+
+    
+        if (direction == -1f)
         {
-            rb.linearVelocity = arrowDirection * arrowSpeed;
+            arrow.transform.localScale = new Vector3(-2, 1, 1); // Retourner visuellement la flèche
         }
+
+
     }
+    
 }
