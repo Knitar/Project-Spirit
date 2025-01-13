@@ -9,12 +9,12 @@ public class flechee : MonoBehaviour
     /********************************** Si elle ne touche rien *******************************/
     void Start()
     {
-        Destroy(gameObject, lifetime);
+        Destroy(gameObject, lifetime); // ça detruit l'objet
     }
 
     /********************************** Contact avec quelque chose *******************************/
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(gameObject);
+        Destroy(gameObject);// ça detruit l'objet
     }
 }
