@@ -9,7 +9,7 @@ public class move_player : MonoBehaviour
     private Vector3 velocity = Vector3.zero; // pour "lisser" le mouv du perso 
     public Animator animator; // animations
     public SpriteRenderer spriteRenderer; // unity 
-
+    public CapsuleCollider2D playerCollider;
 
     public Transform spawnPoint; // le point de spawn de la fleche 
     public Transform checksolgauche;

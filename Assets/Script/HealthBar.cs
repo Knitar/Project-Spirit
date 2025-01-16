@@ -5,6 +5,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
+    public GameObject settingWindow;
     public void SetMaxHealth(int health)
     {
         slider.maxValue = health;
@@ -19,4 +20,20 @@ public class HealthBar : MonoBehaviour
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
+
+    public void CloseHealtBar()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (PauseMenu.pause)
+            {
+                settingWindow.SetActive(false);
+            }
+            else
+            {
+                 settingWindow.SetActive(true);
+            }
+        }
+    }
+
 }

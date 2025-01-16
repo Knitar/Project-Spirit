@@ -37,7 +37,7 @@ public class traversmurs : MonoBehaviour
         animator.SetBool("canPassWalls", true);
 
         // Ignorer les collisions avec les murs traversables
-        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("travmurs"), true);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("murs"), true);
     }
 
     void DisablePassThroughWalls()
@@ -48,6 +48,6 @@ public class traversmurs : MonoBehaviour
         animator.SetBool("canPassWalls", false);
 
         // Réactiver les collisions
-        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("travmurs"), false);
+        Physics2D.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("murs"), false);
     }
 }

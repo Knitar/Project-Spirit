@@ -56,6 +56,8 @@ public class JoueurHealth : MonoBehaviour
         //joueur l'animation de mort
         move_player.instance.animator.SetTrigger("Mort");
         //Empêcher les animations avec le décort
+        move_player.instance.rb.bodyType = RigidbodyType2D.Kinematic;
+        move_player.instance.playerCollider.enabled = false;
     }
 
     public IEnumerator InvicibilityFlash()
