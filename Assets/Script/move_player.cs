@@ -10,24 +10,17 @@ public class move_player : MonoBehaviour
     public Animator animator; // animations
     public SpriteRenderer spriteRenderer; // unity 
 
-    public bool saut; 
-
-    public bool sol;
 
     public Transform spawnPoint; // le point de spawn de la fleche 
     public Transform checksolgauche;
-    public Transform checksoldroite;
+    
     void FixedUpdate()
     {
-        sol = Physics2D.OverlapArea(checksolgauche.position,checksoldroite.position);
         
         float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime; // Cette ligne fait bouger le perso 
         // par contre pour les touches : edit/project-settings/Input-mangager/horizontal
 
-        if(Input.GetButtonDown("Jump") && sol)
-        {
-            saut = true;
-        }
+       
         MovePlayer(horizontalMovement); //appele à la méthode qui calcule le déplacement 
 
         Flip(rb.linearVelocity.x); //appelle de la fonction qui retourne 
@@ -44,11 +37,6 @@ public class move_player : MonoBehaviour
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.linearVelocity.y); // vitesse cible du personnage
         rb.linearVelocity = Vector3.SmoothDamp(rb.linearVelocity,targetVelocity, ref velocity, .05f); // Le SMoothdamp lisse la transition entre la vitesse actuelle et celle ciblée  
         
-        if(saut)
-        {
-            rb.AddForce(new Vector2(0f,jumpForce));
-            saut = false;
-        }
    
     }
     /********************************** Retourne le personnage(litteralement) *******************************/

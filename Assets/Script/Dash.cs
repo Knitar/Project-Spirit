@@ -24,7 +24,7 @@ public class Dash : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.F) && !dash )
+        if (Input.GetKeyDown(KeyCode.Q) && !dash )
         {
             EnableDash();
           
