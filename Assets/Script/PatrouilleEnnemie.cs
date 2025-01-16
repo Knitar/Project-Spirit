@@ -6,6 +6,8 @@ public class PatrouilleEnnemie : MonoBehaviour
     public Transform[] waypoints;
     public SpriteRenderer graphics;
 
+    public int DamageOnCollision = 20;
+
     private Transform target;
     private int destPoint = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,6 +27,15 @@ public class PatrouilleEnnemie : MonoBehaviour
             destPoint = (destPoint + 1) % waypoints.Length;
             target = waypoints[destPoint];
             graphics.flipX = !graphics.flipX;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.CompareTag("Player"))
+        {
+            JoueurHealth joueurHealth = collision.transform.GetComponent<JoueurHealth>();
+            joueurHealth.TakeDamage(DamageOnCollision);
         }
     }
 }

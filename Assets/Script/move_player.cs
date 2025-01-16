@@ -14,6 +14,20 @@ public class move_player : MonoBehaviour
     public Transform spawnPoint; // le point de spawn de la fleche 
     public Transform checksolgauche;
     
+    public static move_player instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("gna gna gna Move player");
+            return;
+        }
+
+        instance = this;
+    }
+
+
     void FixedUpdate()
     {
         
