@@ -13,7 +13,7 @@ public class Jump_Movement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask collisionLayer;
-    bool isGrounded;
+    public bool isGrounded;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

@@ -16,6 +16,7 @@ public class move_player : MonoBehaviour
     
     public static move_player instance;
 
+
     private void Awake()
     {
         if (instance != null)
@@ -50,7 +51,7 @@ public class move_player : MonoBehaviour
     {
         Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.linearVelocity.y); // vitesse cible du personnage
         rb.linearVelocity = Vector3.SmoothDamp(rb.linearVelocity,targetVelocity, ref velocity, .05f); // Le SMoothdamp lisse la transition entre la vitesse actuelle et celle ciblée  
-        
+    
    
     }
     /********************************** Retourne le personnage(litteralement) *******************************/

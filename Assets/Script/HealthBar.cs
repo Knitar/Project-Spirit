@@ -21,19 +21,27 @@ public class HealthBar : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
-    public void CloseHealtBar()
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (PauseMenu.pause)
+           if(PauseMenu.pause)
             {
                 settingWindow.SetActive(false);
             }
             else
             {
-                 settingWindow.SetActive(true);
+                settingWindow.SetActive(true);
             }
         }
+            if(!PauseMenu.pause)
+            {
+                settingWindow.SetActive(true);
+            }
+            else
+            {
+                settingWindow.SetActive(false);
+            }
     }
 
 }
