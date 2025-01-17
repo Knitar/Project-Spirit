@@ -610,6 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToDestroy: {fileID: 1303058011}
+  Hitsound: {fileID: 8300000, guid: 9674b38265c31f24986205ac8f79fe30, type: 3}
 --- !u!61 &302994875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4926,6 +4927,7 @@ MonoBehaviour:
   graphics: {fileID: 1389994605}
   isInvisible: 0
   healthBar: {fileID: 1836928241}
+  hitSound: {fileID: 8300000, guid: 2593778be1c25d2429b06c34ce104a89, type: 3}
 --- !u!70 &1389994609
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

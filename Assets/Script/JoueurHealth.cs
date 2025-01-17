@@ -14,6 +14,8 @@ public class JoueurHealth : MonoBehaviour
     public bool isInvisible = false;
 
     public HealthBar healthBar;
+    
+    public AudioClip hitSound;
     void Start()
     {
         currentHealth = maxHealth;
@@ -32,6 +34,7 @@ public class JoueurHealth : MonoBehaviour
     {
         if (!isInvisible)
         {
+            AudioManager.instance.PlayClipAt(hitSound, transform.position);
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
             isInvisible = true;
