@@ -1,6 +1,7 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class move_player : MonoBehaviour
+public class move_player : NetworkBehaviour
 {
     public float moveSpeed; // vitesse du perso 
 
@@ -41,13 +42,16 @@ public class move_player : MonoBehaviour
     /***************************** methode pour qu'il bouge *****************/
     void MovePlayer(float _horizontalMovement)
     {
-        Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.linearVelocity.y); // vitesse cible du personnage
+        if(IsOwner)
+        {
+            Vector3 targetVelocity = new Vector2(_horizontalMovement, rb.linearVelocity.y); // vitesse cible du personnage
         rb.linearVelocity = Vector3.SmoothDamp(rb.linearVelocity,targetVelocity, ref velocity, .05f); // Le SMoothdamp lisse la transition entre la vitesse actuelle et celle ciblée  
         
         if(saut)
         {
             rb.AddForce(new Vector2(0f,jumpForce));
             saut = false;
+        }
         }
    
     }
